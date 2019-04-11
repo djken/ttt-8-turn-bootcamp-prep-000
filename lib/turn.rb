@@ -1,4 +1,3 @@
-#board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -9,7 +8,6 @@ end
 
 def input_to_index(user_input)
  index = user_input.to_i - 1
- return index
 end
 
 def valid_move?(board, index)
@@ -39,7 +37,7 @@ end
 
 def move(board, index, value = "X")
   board[index] = value
-  board
+  return board
 end
 
 def turn(board)
@@ -54,6 +52,5 @@ def turn(board)
    display_board(board)
   else
     turn(board)
-     puts "input a valid number"
  end
 end
