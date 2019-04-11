@@ -1,3 +1,4 @@
+#board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -7,7 +8,9 @@ def display_board(board)
 end
 
 def input_to_index(user_input)
- index = user_input.to_i - 1
+ index = user_input.to_i
+ index -= 1
+ return index
 end
 
 def valid_move?(board, index)
@@ -42,10 +45,12 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  user_input =gets.strip
+  user_input = gets.strip
   index = input_to_index(user_input)
+
+  valid_number =  valid_move?(board,index)
   
-  if (valid_move?(board, index)) == true
+  if valid_number == true
    move(board, index)
    display_board(board)
   else
