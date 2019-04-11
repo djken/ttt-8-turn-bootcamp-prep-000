@@ -58,13 +58,3 @@ def turn (board)
   end
 end
 
-
-
-#!/usr/bin/env ruby
-require_relative '../lib/turn'
-
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-puts "Welcome to Tic Tac Toe!"
-display_board(board)
-turn(board)
-
