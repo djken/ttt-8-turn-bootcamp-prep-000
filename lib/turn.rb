@@ -50,7 +50,7 @@ def turn(board)
   valid_number =  valid_move?(board,index)
   
   if valid_number == true
-   move(board, index, "X")
+   move(board, index)
    display_board(board)
   else
     turn(board)
